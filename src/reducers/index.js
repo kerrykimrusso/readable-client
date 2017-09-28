@@ -11,6 +11,7 @@ const categoriesReducer = (state = [], action) => {
 }
 
 const commentsReducer = (state = [], action) => {
+    const {id, body} = action.payload || {};
     switch(action.type) {
         case Actions.Comment.types.CREATE_COMMENT:
             return [
@@ -18,14 +19,12 @@ const commentsReducer = (state = [], action) => {
                 action.payload.comment
             ];
         case Actions.Comment.types.UPDATE_COMMENT:
-            let {id, body} = action.payload;
             return state.map(
                 (comment) => {
                     if(id !== comment.id) return comment;
                     return Object.assign({body}, comment);
                 });
         case Actions.Comment.types.REMOVE_COMMENT:
-            let {id} = action.payload;
             return state.filter(
                 (comment) => {
                     return id !== comment.id;
@@ -36,6 +35,7 @@ const commentsReducer = (state = [], action) => {
 }
 
 const postsReducer = (state = [], action) => {
+    const {id, title, body} = action.payload || {};
     switch(action.type) {
         case Actions.Post.types.CREATE_POST:
             return [
@@ -43,7 +43,6 @@ const postsReducer = (state = [], action) => {
                 action.payload.post
             ];
         case Actions.Post.types.UPDATE_POST:
-            const {id, title, body} = action.payload;
             return state.map(
                 (post) => {
                     if(post.id !== id) return post;
