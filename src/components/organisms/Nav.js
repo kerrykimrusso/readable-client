@@ -8,14 +8,15 @@ export const Nav = ({
   <div className="ui container">
     <div className="ui large secondary inverted pointing menu">
       <NavLink to='/' className="item">Home</NavLink>
-      <div className="ui dropdown item">
+      <div className="ui simple dropdown item">
         Categories
         <div className="menu">
           {categories.map((cat) => <NavLink key={cat.name} to={`/category/${cat.path}`} className='item'>{cat.name}</NavLink>)}
         </div>
+        <i className="dropdown icon"></i>
       </div>
       <div className="right item">
-        <NavLink to='' className="ui inverted button">New Post</NavLink>
+        <NavLink to='' className="ui inverted green button"><i className="plus icon"></i> New Post</NavLink>
       </div>
     </div>
   </div>
