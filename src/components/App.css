@@ -1,24 +1,17 @@
-.App {
+.main.container {
+  margin: 3em auto 1.5em;
+}
+
+.ui.items>.item>.content {
+  margin-left: 1em;
+}
+
+.ui.vertical.buttons .button.vote-score {
+  background: none;
+  padding: .5em 0;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.ui.vertical.buttons .button.circular {
+  border-radius: 50%;
 }

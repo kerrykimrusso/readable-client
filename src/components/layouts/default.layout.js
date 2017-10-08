@@ -3,33 +3,21 @@ import PropTypes from 'prop-types';
 
 export const DefaultLayout = ({
   nav,
+  body,
   footer1,
   footer2,
   footer3
 }) => (
-  <div>
-    {/* following menu */}
-    <div className="ui large top fixed menu transition hidden">
-      {nav}
-    </div>
-
+  <div className="pusher">
     <div className="ui inverted vertical masthead center aligned segment">
-      {/* top menu */}
-      <div className="ui container">
+      {/* following menu */}
+      <div className="ui inverted large top fixed menu">
         {nav}
       </div>
-
-      <div className="ui text container">
-        <h1 className="ui inverted header">
-          Imagine-a-Company
-        </h1>
-        <h2>Do whatever you want when you want to.</h2>
-        <div className="ui huge primary button">Get Started <i className="right arrow icon"></i></div>
-      </div>
-
     </div>
 
-    <div className="ui vertical stripe segment">
+    <div className="ui main container">
+      {body}
     </div>
 
     {/* footer */}
@@ -53,6 +41,7 @@ export const DefaultLayout = ({
 
 DefaultLayout.propTypes = {
   nav: PropTypes.element.isRequired,
+  body: PropTypes.element.isRequired,
   footer1: PropTypes.element.isRequired,
   footer2: PropTypes.element.isRequired,
   footer3: PropTypes.element.isRequired,

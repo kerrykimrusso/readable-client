@@ -1,20 +1,25 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": [
-      "react"
-  ],
-  "parserOptions": {
-      "ecmaVersion": 6,
-      "ecmaFeatures": {
-          "jsx": true,
-          "modules": true
-      },
-      "sourceType": "module"
-  },
-  "env": {
-      "browser": true
-  },
-  "globals": {
-      "global": true
-  }
+	"parser": "babel-eslint",
+	"extends": [
+		"eslint:recommended", 
+		"plugin:react/recommended"
+	],
+	"plugins": [
+		"react"
+	],
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"ecmaFeatures": {
+			"jsx": true,
+			"modules": true,
+			"impliedStrict": true
+		},
+		"sourceType": "module"
+	},
+	"env": {
+		"browser": true
+	},
+	"globals": {
+		"global": true
+	}
 }
