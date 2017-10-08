@@ -11,8 +11,19 @@ const mapStateToProps = (state, ownProps) => {
     postsSortedByVoteScore = postsSortedByVoteScore.filter((post) => post.category === ownProps.match.params.id);
   }
 
+  const postCountsPerCategory = {};
+  state.posts.forEach((post) => {
+    if(!(post.category in postCountsPerCategory)) postCountsPerCategory[post.category] = 0;
+    postCountsPerCategory[post.category] += 1;
+  });
+
+  let categoriesWithCounts = state.categories.map((category) => ({
+    ...category,
+    numPosts: postCountsPerCategory[category.name] || 0,
+  }));
+
   return {
-    categories: state.categories,
+    categories: categoriesWithCounts,
     posts: postsSortedByVoteScore,
   };
 };
