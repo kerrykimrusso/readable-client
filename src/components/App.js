@@ -2,7 +2,7 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from '../reducers';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePageContainer from '../containers/home.page.container';
 
 const store = createStore(reducers, {
@@ -49,12 +49,14 @@ const store = createStore(reducers, {
 export const App = (props) => (
   <Provider store={store}>
     <Router>
-      <Route exact path="/" render={() => <HomePageContainer/>}/>
-      {/* <Route exact path="/category/:id" render={}/>
-      <Route exact path="/category/post/:id" render={}/>
-      <Route path="/post" render={}/>
-      <Route path="/post/new" render={}/>
-      <Route path="/post/:id/edit" render={}/> */}
+      <Switch>
+        <Route exact path="/" component={HomePageContainer}/>
+        <Route exact path="/category/:id" component={HomePageContainer}/>
+        {/* <Route exact path="/category/post/:id" render={}/>
+        <Route path="/post" render={}/>
+        <Route path="/post/new" render={}/>
+        <Route path="/post/:id/edit" render={}/> */}
+      </Switch>
     </Router>
   </Provider>
 );
