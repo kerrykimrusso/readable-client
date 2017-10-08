@@ -49,7 +49,7 @@ export default class HomePage extends Component {
         voteScore={post.voteScore}
         category={post.category}
         deleted={post.deleted}
-        numComments={0}
+        numComments={post.numComments}
         onUpvote={onPostUpvote}
         onDownvote={onPostDownvote}
       />
