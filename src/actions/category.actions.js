@@ -1,9 +1,9 @@
-export const types = Object.freeze({
-    FETCH_CATEGORIES: 'FETCH_CATEGORIES',
+export const Types = Object.freeze({
+    FETCH: 'category/FETCH',
 });
 
-export const fetchCategory = (categories) => ({
-    type: types.FETCH_CATEGORIES,
+export const fetch = (categories) => ({
+    type: Types.FETCH,
     payload: {
         categories
     }

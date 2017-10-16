@@ -29,8 +29,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onPostUpvote: (id) => dispatch(Actions.Common.upvote(id)),
-  onPostDownvote: (id) => dispatch(Actions.Common.downvote(id)),
+  onPostUpvote: (id) => dispatch(Actions.Post.upvote(id)),
+  onPostDownvote: (id) => dispatch(Actions.Post.downvote(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
