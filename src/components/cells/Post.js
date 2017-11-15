@@ -31,7 +31,7 @@ const Post = ({
       <div className="description">
       </div>
       <div className="extra">
-        <Link class="ui label" to={`/post/${id}`}>
+        <Link className="ui label" to={`/post/${id}`}>
           <i className="comment icon"></i> {numComments}
         </Link>
       </div>

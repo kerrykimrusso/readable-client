@@ -23,7 +23,7 @@ export const ListWithStat = ({
 
 ListWithStat.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-      displayName: PropTypes.string.isRequired,
+      displayName: PropTypes.string,
     })).isRequired,
   itemKeyPropertyName: PropTypes.string.isRequired,
   itemDisplayNamePropertyName: PropTypes.string.isRequired,

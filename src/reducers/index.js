@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import Actions from '../actions';
+import Reactions from '../reactions';
 
 const categoriesReducer = (state = [], action) => {
     switch(action.type) {
@@ -11,27 +12,8 @@ const categoriesReducer = (state = [], action) => {
 }
 
 const commentsReducer = (state = [], action) => {
-    const {id, body} = action.payload || {};
-    switch(action.type) {
-        case Actions.Comment.Types.CREATE:
-            return [
-                ...state,
-                action.payload.comment
-            ];
-        case Actions.Comment.Types.UPDATE:
-            return state.map(
-                (comment) => {
-                    if(id !== comment.id) return comment;
-                    return Object.assign({body}, comment);
-                });
-        case Actions.Comment.Types.REMOVE:
-            return state.filter(
-                (comment) => {
-                    return id !== comment.id;
-                });
-        default:
-            return state;
-    }
+    if(!(action.type in Reactions.Comments)) return state;
+    Reactions.Comments[action.type](state, action.payload);
 }
 
 const postsReducer = (state = [], action) => {

@@ -21,7 +21,7 @@ export default class HomePage extends Component {
         voteScore: PropTypes.number.isRequired,
         category: PropTypes.string.isRequired,
         deleted: PropTypes.bool.isRequired,
-        numComments: PropTypes.number.isRequired,
+        numComments: PropTypes.number,
       })).isRequired,
 
     onPostUpvote: PropTypes.func.isRequired,
